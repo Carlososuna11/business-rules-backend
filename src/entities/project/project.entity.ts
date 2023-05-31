@@ -1,5 +1,5 @@
+import { Transform } from 'class-transformer';
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
-
 @Entity('projects')
 export class Project {
 	@PrimaryGeneratedColumn('uuid')
@@ -12,13 +12,24 @@ export class Project {
 	description: string;
 
 	@Column({ type: 'varchar', name: 'engine_file', length: 250, nullable: true })
+	@Transform(({ value }) => {
+		if (value) {
+			const host = process.env.BACKEND_HOST || 'http://localhost:3000';
+			return `${host}/public/projects/${value}`;
+		}
+		return value;
+	})
 	engineFile?: string;
 
 	@Column({ type: 'varchar', name: 'context_file', length: 250, nullable: true })
+	@Transform(({ value }) => {
+		if (value) {
+			const host = process.env.BACKEND_HOST || 'http://localhost:3000';
+			return `${host}/public/contexts/${value}`;
+		}
+		return value;
+	})
 	contextFile?: string;
-
-	@Column({ type: 'boolean', name: 'is_complete', default: false })
-	isComplete: boolean;
 
 	@CreateDateColumn({ type: 'timestamp', name: 'created_at' })
 	createdAt: Date;

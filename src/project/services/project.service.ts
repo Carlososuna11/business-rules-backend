@@ -2,8 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { FilterOperator, FilterSuffix, PaginateQuery, paginate, Paginated } from 'nestjs-paginate';
-import { CreateProjectDto } from '../dto/create-project.dto';
-import { UpdateProjectDto } from '../dto/update-project.dto';
+import { CreateProjectDto, UploadProjectDto, UpdateProjectDto } from '../dto';
 import { Project } from '@entities/project';
 
 @Injectable()
@@ -13,8 +12,12 @@ export class ProjectsService {
 		private readonly repository: Repository<Project>
 	) {}
 
+	async upload(uploadProjectDto: UploadProjectDto): Promise<Project> {
+		const project = this.repository.create(uploadProjectDto);
+		return await this.repository.save(project);
+	}
+
 	async create(createProjectDto: CreateProjectDto): Promise<Project> {
-		console.log('createProjectDto', createProjectDto);
 		const project = this.repository.create(createProjectDto);
 		return await this.repository.save(project);
 	}

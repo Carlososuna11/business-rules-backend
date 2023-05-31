@@ -13,5 +13,6 @@ export const config = {
 		},
 		autoLoadEntities: true,
 	},
+	backendHost: process.env.BACKEND_HOST || 'http://localhost:3000',
 	foo: 'dev-bar',
 };

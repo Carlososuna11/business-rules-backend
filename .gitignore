@@ -37,3 +37,6 @@ lerna-debug.log*
 # Environment variables
 .env
 docs
+
+public/projects/**
+public/contexts/**

@@ -5,6 +5,7 @@ import { middleware } from './app.middleware';
 import { AppModule } from './app.module';
 import { setupSwagger } from './swagger';
 import { json, urlencoded } from 'body-parser';
+import * as fs from 'fs';
 
 /**
  * https://docs.nestjs.com
@@ -34,6 +35,17 @@ async function bootstrap(): Promise<void> {
 			limit: '10mb',
 		})
 	);
+
+	// if not exists create uploads folder
+	const mediaPaths = [`${__dirname}/../public/projects`, `${__dirname}/../public/contexts`];
+
+	for (const location of mediaPaths) {
+		try {
+			await fs.promises.access(location, fs.constants.F_OK);
+		} catch (error) {
+			await fs.promises.mkdir(location);
+		}
+	}
 
 	await app.listen(process.env.PORT || 3000);
 

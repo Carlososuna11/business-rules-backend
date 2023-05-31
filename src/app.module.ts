@@ -8,6 +8,8 @@ import { CommonModule, AllExceptionsFilter } from './common';
 import { configuration } from './config';
 import { ProjectsModule } from './project';
 import { BaseModule } from './base';
+import { REQUEST } from '@nestjs/core';
+import { Request } from 'express';
 
 @Module({
 	imports: [
@@ -30,7 +32,7 @@ import { BaseModule } from './base';
 		// https://docs.nestjs.com/techniques/mvc
 		ServeStaticModule.forRoot({
 			rootPath: `${__dirname}/../public`,
-			renderPath: '/',
+			serveRoot: '/public/',
 		}),
 		// Service Modules
 		CommonModule,
@@ -52,6 +54,15 @@ import { BaseModule } from './base';
 				transform: true, // transform object to DTO class
 				whitelist: true,
 			}),
+		},
+		// REQUEST URL BASE
+		{
+			provide: 'HOST',
+			useFactory: (req: Request) => {
+				const host = `${req.protocol}://${req.get('Host')}`;
+				return host;
+			},
+			inject: [REQUEST],
 		},
 	],
 })

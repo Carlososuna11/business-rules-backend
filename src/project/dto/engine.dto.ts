@@ -13,3 +13,8 @@ export class EngineDto implements EngineObject {
 	@IsArray()
 	rules: RuleObject[];
 }
+
+export class DiagramDto {
+	@IsString()
+	diagram: string;
+}

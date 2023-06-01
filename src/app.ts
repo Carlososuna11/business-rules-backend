@@ -37,7 +37,12 @@ async function bootstrap(): Promise<void> {
 	);
 
 	// if not exists create uploads folder
-	const mediaPaths = [`${__dirname}/../public/projects`, `${__dirname}/../public/contexts`];
+	const mediaPaths = [
+		`${__dirname}/../public/projects`,
+		`${__dirname}/../public/contexts`,
+		`${__dirname}/../public/static`,
+		`${__dirname}/../public/static/contexts`,
+	];
 
 	for (const location of mediaPaths) {
 		try {

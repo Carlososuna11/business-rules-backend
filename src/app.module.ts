@@ -37,7 +37,8 @@ import { Request } from 'express';
 		// Service Modules
 		CommonModule,
 		BaseModule,
-		ProjectsModule, // Global
+		ProjectsModule,
+		// Global
 		// Module Router
 		// https://docs.nestjs.com/recipes/router-module
 	],

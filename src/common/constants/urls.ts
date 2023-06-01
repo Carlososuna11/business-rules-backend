@@ -11,6 +11,16 @@ const URLS = {
 		setEngine: '/:uuid/engine/',
 		getContext: '/:uuid/context/',
 		setContext: '/:uuid/context/',
+		getDiagram: '/:uuid/diagram/',
+	},
+	ENGINE: {
+		base: 'api/engine',
+		getCommands: '/commands/',
+		toDiagram: 'to-diagram',
+	},
+	CONTEXT: {
+		base: 'api/contexts',
+		getStaticContexts: '/',
 	},
 };
 

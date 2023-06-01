@@ -20,12 +20,12 @@ import {
 } from '@nestjs/common';
 import { MESSAGES, PaginateQueryOptions, ApiPaginatedResponse, exportContext, importContext } from '@common/utils';
 import { ProjectsService } from '../services/project.service';
-import { CreateProjectDto, EngineDto, UpdateProjectDto, UploadProjectDto, ContextDto } from '../dto';
+import { CreateProjectDto, EngineDto, UpdateProjectDto, UploadProjectDto, ContextDto, DiagramDto } from '../dto';
 import { Project } from '@entities/project';
 import { URLS } from '@common/constants';
 import { Paginate, PaginateQuery, Paginated } from 'nestjs-paginate';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { Engine } from 'typescript-business-rules-engine';
+import { Engine, getUrlDiagram } from 'typescript-business-rules-engine';
 import { ApiBody, ApiConsumes, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { diskStorage } from 'multer';
 import { v4 as uuidv4 } from 'uuid';
@@ -291,5 +291,31 @@ export class ProjectsController {
 		await this.projectsService.update(uuid, project);
 
 		return body.context;
+	}
+
+	@Get(URLS.PROJECTS.getDiagram)
+	@ApiResponse({
+		status: HttpStatus.OK,
+		description: MESSAGES.OK,
+		type: DiagramDto,
+	})
+	public async getDiagram(@Param('uuid', ParseUUIDPipe) uuid: string): Promise<DiagramDto> {
+		const project = await this.projectsService.findOne(uuid);
+		if (!project) {
+			throw new NotFoundException('Project not found');
+		}
+
+		if (!project.engineFile) {
+			throw new BadRequestException('Project does not have an engine file');
+		}
+
+		try {
+			const engine = await Engine.import(`${__dirname}/../../../public/projects/${project.engineFile}`);
+			const diagram = getUrlDiagram(engine.toDiagram());
+			return { diagram };
+		} catch (e) {
+			Logger.error(e, 'ProjectsController.getDiagram');
+			throw new BadRequestException(`Error Generating Diagram: ${e}`);
+		}
 	}
 }

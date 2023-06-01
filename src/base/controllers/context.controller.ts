@@ -3,12 +3,13 @@ import { MESSAGES, PaginatedResult } from '@common/utils';
 import { ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { promises as fs } from 'fs';
 import { Request } from 'express';
+import { URLS } from '@common/constants';
 import { PaginatedResultDto } from '../dto/context.dto';
 
-@Controller()
+@Controller(URLS.CONTEXT.base)
 @ApiTags('Context')
 export class ContextController {
-	@Get('contexts')
+	@Get(URLS.CONTEXT.getStaticContexts)
 	@ApiQuery({ name: 'page', required: false, type: Number })
 	@ApiQuery({ name: 'limit', required: false, type: Number })
 	@ApiResponse({

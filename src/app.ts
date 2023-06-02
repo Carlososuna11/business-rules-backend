@@ -16,6 +16,7 @@ async function bootstrap(): Promise<void> {
 	const isProduction = process.env.NODE_ENV === 'production';
 	const app = await NestFactory.create<NestExpressApplication>(AppModule, {
 		bufferLogs: true,
+		cors: true,
 	});
 
 	if (isProduction) {

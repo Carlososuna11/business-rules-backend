@@ -17,6 +17,7 @@ import {
 	Logger,
 	ClassSerializerInterceptor,
 	UnsupportedMediaTypeException,
+	HttpCode,
 } from '@nestjs/common';
 import { MESSAGES, PaginateQueryOptions, ApiPaginatedResponse, exportContext, importContext } from '@common/utils';
 import { ProjectsService } from '../services/project.service';
@@ -29,7 +30,7 @@ import { Engine, getUrlDiagram } from 'typescript-business-rules-engine';
 import { ApiBody, ApiConsumes, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { diskStorage } from 'multer';
 import { v4 as uuidv4 } from 'uuid';
-import fs from 'fs';
+import { unlink } from 'fs';
 import Ajv from 'ajv';
 
 @Controller(URLS.PROJECTS.base)
@@ -44,6 +45,7 @@ export class ProjectsController {
 		description: MESSAGES.CREATED,
 		type: Project,
 	})
+	@HttpCode(HttpStatus.CREATED)
 	public async create(@Body() body: CreateProjectDto): Promise<Project> {
 		const project = await this.projectsService.create(body);
 		return project;
@@ -89,11 +91,15 @@ export class ProjectsController {
 		status: HttpStatus.NO_CONTENT,
 		description: MESSAGES.NO_CONTENT,
 	})
+	@HttpCode(HttpStatus.NO_CONTENT)
 	public async remove(@Param('uuid', ParseUUIDPipe) uuid: string): Promise<void> {
 		const project = await this.projectsService.findOne(uuid);
+		if (!project) {
+			return;
+		}
 		if (project.engineFile) {
 			// delete the engine file
-			fs.unlink(`${__dirname}/../../../public/projects/${project.engineFile}`, (err) => {
+			unlink(`${__dirname}/../../../public/projects/${project.engineFile}`, (err) => {
 				if (err) {
 					Logger.error(err, 'ProjectsController.remove');
 				}
@@ -101,7 +107,7 @@ export class ProjectsController {
 		}
 		if (project.contextFile) {
 			// delete the context file
-			fs.unlink(`${__dirname}/../../../public/projects/${project.contextFile}`, (err) => {
+			unlink(`${__dirname}/../../../public/projects/${project.contextFile}`, (err) => {
 				if (err) {
 					Logger.error(err, 'ProjectsController.remove');
 				}
@@ -149,6 +155,7 @@ export class ProjectsController {
 			},
 		})
 	)
+	@HttpCode(HttpStatus.CREATED)
 	public async uploadFile(
 		@UploadedFile(
 			new ParseFilePipe({
@@ -163,7 +170,7 @@ export class ProjectsController {
 		} catch (e) {
 			Logger.error(e, 'ProjectsController.uploadFile');
 			// Delete the file
-			fs.unlink(file.path, (err) => {
+			unlink(file.path, (err) => {
 				if (err) {
 					Logger.error(err, 'ProjectsController.uploadFile');
 				}

@@ -22,6 +22,7 @@ export class ContextController {
 		@Query('page') page = 1,
 		@Query('limit') limit = 10
 	): Promise<PaginatedResult<object>> {
+		const host = `${req.protocol}://${req.get('host')}`;
 		const files = await fs.readdir(`${__dirname}/../../../public/static/contexts`);
 		const JSONFiles = files.filter((file) => file.endsWith('.json'));
 		const fileCount = JSONFiles.length;
@@ -30,11 +31,14 @@ export class ContextController {
 		const contexts = await Promise.all(
 			filesForPage.map(async (file) => {
 				const data = await fs.readFile(`${__dirname}/../../../public/static/contexts/${file}`, 'utf-8');
-				return JSON.parse(data);
+				const response = {
+					data: JSON.parse(data),
+					file: `${host}/public/static/contexts/${file}`,
+				};
+				return response;
 			})
 		);
-		const host = `${req.protocol}://${req.get('host')}/contexts`;
-		const paginatedResult = new PaginatedResult(contexts, page, limit, fileCount, host);
+		const paginatedResult = new PaginatedResult(contexts, page, limit, fileCount, `${host}${req.path}`);
 		return paginatedResult;
 	}
 }

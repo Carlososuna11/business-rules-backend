@@ -38,6 +38,8 @@ lerna-debug.log*
 .env
 docs
 
+public/**
+!public/static/**
 public/projects/**
 public/contexts/**
 databases.json

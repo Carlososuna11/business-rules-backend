@@ -39,7 +39,7 @@ lerna-debug.log*
 docs
 
 public/**
-!public/static/**
+!public/static/.gitkeep
 public/projects/**
 public/contexts/**
 databases.json

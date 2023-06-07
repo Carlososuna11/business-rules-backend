@@ -1,7 +1,7 @@
 import { IsOptional, IsString, IsUUID } from 'class-validator';
 import type { Project } from '@entities/project';
 
-export class UploadProjectDto implements Omit<Project, 'createdAt' | 'updatedAt' | 'contextFile'> {
+export class UploadProjectDto implements Omit<Project, 'createdAt' | 'updatedAt'> {
 	@IsUUID()
 	uuid: string;
 
@@ -14,4 +14,7 @@ export class UploadProjectDto implements Omit<Project, 'createdAt' | 'updatedAt'
 	@IsOptional()
 	@IsString()
 	description: string;
+
+	@IsOptional()
+	contextFile?: string;
 }

@@ -32,6 +32,7 @@ import { diskStorage } from 'multer';
 import { v4 as uuidv4 } from 'uuid';
 import { unlink } from 'fs';
 import Ajv from 'ajv';
+import type { JSONSchema7 } from 'json-schema';
 
 @Controller(URLS.PROJECTS.base)
 @ApiTags('Projects')
@@ -178,11 +179,22 @@ export class ProjectsController {
 			throw new BadRequestException('Error Loading File: Invalid TypeScript Business Rules file');
 		}
 		const fileName = file.filename.split('.')[0];
+
+		const ajv = new Ajv();
+		if (engine.dataSchema) {
+			if (!ajv.validateSchema(engine.dataSchema)) {
+				throw new BadRequestException('Invalid Context Schema');
+			}
+
+			await exportContext(engine.dataSchema, `${__dirname}/../../../public/contexts`, fileName);
+		}
+
 		const uploadData: UploadProjectDto = {
 			uuid: fileName,
 			name: engine.name || 'Untitled Project',
 			description: engine.description || '',
 			engineFile: file.filename,
+			contextFile: engine.dataSchema ? `${fileName}.json` : undefined,
 		};
 		const project = await this.projectsService.upload(uploadData);
 		return project;
@@ -235,10 +247,18 @@ export class ProjectsController {
 		}
 		let engine: Engine;
 		try {
+			let dataSchema: JSONSchema7 | undefined;
+			if (project.contextFile) {
+				const context = await importContext(`${__dirname}/../../../public/contexts`, project.uuid);
+				dataSchema = JSON.parse(context);
+			}
+
 			engine = new Engine(
 				engineDto.name || project.name,
 				engineDto.rules,
-				engineDto.description || project.description
+				engineDto.description || project.description,
+				undefined,
+				dataSchema
 			);
 		} catch (e) {
 			Logger.error(e, 'ProjectsController.setEngine');
@@ -290,6 +310,13 @@ export class ProjectsController {
 		// check if context is a valid json schema
 		if (!ajv.validateSchema(body.context)) {
 			throw new BadRequestException('Invalid Context Schema');
+		}
+
+		if (project.engineFile) {
+			// update the engine file with the new context
+			const engine = await Engine.import(`${__dirname}/../../../public/projects/${project.engineFile}`);
+			engine.dataSchema = body.context;
+			await engine.export(`${__dirname}/../../../public/projects/`, project.uuid);
 		}
 
 		await exportContext(body.context, `${__dirname}/../../../public/contexts`, project.uuid);

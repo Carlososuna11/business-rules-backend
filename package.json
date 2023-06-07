@@ -38,7 +38,6 @@
 		"start:prod": "node dist/main",
 		"start:repl": "nest start --entryFile repl",
 		"entity:load": "ts-node bin/entity",
-		"entity:sync": "typeorm-ts-node-commonjs -d bin/ormconfig.ts schema:sync",
 		"context:sql": "ts-node bin/sqlToJsonSchema",
 		"context:json": "ts-node bin/jsonToJsonSchema",
 		"context:csv": "ts-node bin/csvToJsonSchema",
@@ -76,7 +75,7 @@
 		"to-json-schema": "^0.2.5",
 		"typeorm": "^0.3.16",
 		"typescript-business-rules-engine": "^1.0.7",
-        "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
+		"xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.6.3",
@@ -110,7 +109,6 @@
 		"ts-loader": "^9.2.3",
 		"ts-node": "^10.0.0",
 		"tsconfig-paths": "4.2.0",
-		"typeorm-model-generator": "^0.4.6",
 		"typescript": "^5.0.0"
 	},
 	"jest": {

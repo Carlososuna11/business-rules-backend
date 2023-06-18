@@ -16,13 +16,20 @@ const main = async (csvPath: string) => {
 			preview: 1,
 		});
 
-		const savePath = `./public/static/contexts/${uuidv4()}.json`;
+		const uuid = uuidv4();
 
-		const schema = toJsonSchema(json.data[0]);
+		const savePath = `./public/static/contexts/${uuid}.json`;
+
+		const schema = {
+			title: uuid,
+			required: [],
+			...toJsonSchema(json.data[0]),
+		};
 
 		const fileHandle = await fs.open(savePath, 'w');
 		await fileHandle.writeFile(JSON.stringify(schema));
 		await fileHandle.close();
+		console.log(`Schema saved at: ${savePath}`);
 	} catch (e) {
 		console.error(`An error occurred while converting the csv to json: ${e}`);
 	}
@@ -37,6 +44,8 @@ program.option('-c, --csv <csv-file>', 'csv file').action(async (options) => {
 			return;
 		}
 		await main(options.csv);
+	} else {
+		console.error(`Please provide a csv file.`);
 	}
 });
 

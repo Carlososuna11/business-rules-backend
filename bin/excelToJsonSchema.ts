@@ -15,13 +15,18 @@ const main = async (xlsxPath: string) => {
 		});
 
 		for (const sheetData of sheetsDatas) {
+			const uuid = uuidv4();
 			const json = utils.sheet_to_json(sheetData, { header: 0 })[0];
 			if (!json) {
 				console.error(`Sheet ${sheetData.name} is empty`);
 				continue;
 			}
 			const savePath = `./public/static/contexts/${uuidv4()}.json`;
-			const schema = toJsonSchema(createSecureKeys(json as object));
+			const schema = {
+				title: uuid,
+				required: [],
+				...toJsonSchema(createSecureKeys(json as object)),
+			};
 			const fileHandle = await fs.open(savePath, 'w');
 			await fileHandle.writeFile(JSON.stringify(schema));
 			await fileHandle.close();
@@ -60,6 +65,8 @@ program.option('-c, --xlsx <xlsx-file>', 'xlsx file').action(async (options) => 
 			return;
 		}
 		await main(options.xlsx);
+	} else {
+		console.error(`Please provide a xlsx file.`);
 	}
 });
 

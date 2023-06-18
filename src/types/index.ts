@@ -14,10 +14,12 @@ export type CateroryInfo = {
 	description: string;
 };
 
+export type CommandType = 'function' | 'operator' | 'context';
+
 export type CommandInfo = {
 	id: string;
 	name: string;
-	type: 'function' | 'operator' | 'context';
+	type: CommandType;
 	category: CateroryInfo;
 	description: string;
 	argumentType: 'variable' | 'non-variable';

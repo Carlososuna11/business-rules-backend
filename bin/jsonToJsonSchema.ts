@@ -10,9 +10,14 @@ const main = async (jsonPath: string) => {
 	try {
 		const file = await fs.readFile(jsonPath, 'utf8');
 		const json = JSON.parse(file);
-		const schema = toJsonSchema(json);
+		const uuid = uuidv4();
+		const schema = {
+			title: uuid,
+			required: [],
+			...toJsonSchema(json),
+		};
 
-		const savePath = `./public/static/contexts/${uuidv4()}.json`;
+		const savePath = `./public/static/contexts/${uuid}.json`;
 
 		// save schema
 		const fileHandle = await fs.open(savePath, 'w');
@@ -25,7 +30,7 @@ const main = async (jsonPath: string) => {
 };
 
 program.option('-j, --json <json-file>', 'json file').action(async (options) => {
-	if (options.json || process.env.npm_config_json) {
+	if (options.json) {
 		try {
 			await fs.access(options.json, fs.constants.F_OK);
 		} catch {

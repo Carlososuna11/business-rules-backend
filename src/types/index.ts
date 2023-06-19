@@ -1,5 +1,14 @@
 // type for record frontend info
-export type CommandTypesOptions = 'string' | 'number' | 'boolean' | 'object' | 'array' | 'unknown' | 'date' | 'set';
+export type CommandTypesOptions =
+	| 'string'
+	| 'number'
+	| 'boolean'
+	| 'object'
+	| 'array'
+	| 'unknown'
+	| 'date'
+	| 'set'
+	| 'void';
 
 export type ArgumentInfo = {
 	name: string;

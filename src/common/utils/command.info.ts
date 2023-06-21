@@ -1137,7 +1137,7 @@ const functionsInfo: CommandInfo[] = [
 		examples: ['upper("a") --> "A"', 'upper("AaA") --> "AAA"'],
 	},
 	{
-		id: 'YearsFromNow',
+		id: 'yearsFromNow',
 		name: 'Años desde ahora (YearsFromNow)',
 		type: 'function',
 		category: {

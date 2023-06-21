@@ -1151,7 +1151,7 @@ const functionsInfo: CommandInfo[] = [
 			{
 				name: 'fecha',
 				description: 'La fecha a evaluar',
-				acceptedTypes: ['date'],
+				acceptedTypes: ['date', 'string'],
 				isOptional: false,
 			},
 		],

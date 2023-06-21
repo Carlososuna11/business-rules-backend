@@ -1161,6 +1161,62 @@ const functionsInfo: CommandInfo[] = [
 			`YearsFromNow("2020-01-01T00:00:00.000Z") --> ${new Date().getFullYear() - 2020}`,
 		],
 	},
+	{
+		id: 'getElement',
+		name: 'Obtener Elemento (getElement)',
+		type: 'function',
+		category: {
+			id: 'array-functions',
+			name: 'Funciones de Arreglo',
+			description: 'Se usan para obtener información de un arreglo',
+		},
+		description: 'Obtiene un elemento de un arreglo',
+		argumentType: 'non-variable',
+		arguments: [
+			{
+				name: 'arreglo',
+				description: 'El arreglo a evaluar',
+				acceptedTypes: ['array'],
+				isOptional: false,
+			},
+			{
+				name: 'indice',
+				description: 'El indice del elemento a obtener',
+				acceptedTypes: ['number'],
+				isOptional: false,
+			},
+		],
+		returnType: 'unknown',
+		examples: [`getElement([1,2,3], 0) --> 1`, `getElement(["a","b","c"], 1) --> "b"`],
+	},
+	{
+		id: 'getProperty',
+		name: 'Obtener Propiedad (getProperty)',
+		type: 'function',
+		category: {
+			id: 'object-functions',
+			name: 'Funciones de Objeto',
+			description: 'Se usan para obtener información de un objeto',
+		},
+		description: 'Obtiene una propiedad de un objeto',
+		argumentType: 'non-variable',
+		arguments: [
+			{
+				name: 'objeto',
+				description: 'El objeto a evaluar',
+				acceptedTypes: ['object'],
+				isOptional: false,
+			},
+			{
+				name: 'propiedad',
+				description: 'La propiedad a obtener',
+				acceptedTypes: ['string'],
+				isOptional: false,
+			},
+		],
+		returnType: 'unknown',
+		examples: [`getProperty({a:1,b:2}, "a") --> 1`, `getProperty({a:1,b:2}, "b") --> 2`],
+	},
 ];
 
 const contextInfo: CommandInfo[] = [

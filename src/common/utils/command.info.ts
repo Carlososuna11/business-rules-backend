@@ -833,6 +833,62 @@ const functionsInfo: CommandInfo[] = [
 		examples: ['minDate(1, 2, 3) --> 1', 'minDate("1", "2", "3") --> 1'],
 	},
 	{
+		id: 'minObject',
+		name: 'Objecto Mínimo (minObject)',
+		type: 'function',
+		category: {
+			id: 'aggregation-functions',
+			name: 'Funciones de Agregación',
+			description: 'Se usan para calcular un valor a partir de una lista de valores',
+		},
+		description: 'Devuelve el menor objeto basado en una propiedad',
+		argumentType: 'non-variable',
+		arguments: [
+			{
+				name: 'lista',
+				description: 'La lista de la que se quiere conocer el menor objeto',
+				acceptedTypes: ['array'],
+				isOptional: false,
+			},
+			{
+				name: 'propiedad',
+				description: 'La propiedad por la que se quiere obtener el menor objeto',
+				acceptedTypes: ['string'],
+				isOptional: false,
+			},
+		],
+		returnType: 'object',
+		examples: ['minObject([{"a": 1}, {"a": 2}, {"a": 3}], "a") --> {"a": 1}'],
+	},
+	{
+		id: 'maxObject',
+		name: 'Objecto Maximo (maxObject)',
+		type: 'function',
+		category: {
+			id: 'aggregation-functions',
+			name: 'Funciones de Agregación',
+			description: 'Se usan para calcular un valor a partir de una lista de valores',
+		},
+		description: 'Devuelve el mayor objeto basado en una propiedad',
+		argumentType: 'non-variable',
+		arguments: [
+			{
+				name: 'lista',
+				description: 'La lista de la que se quiere conocer el mayor objeto',
+				acceptedTypes: ['array'],
+				isOptional: false,
+			},
+			{
+				name: 'propiedad',
+				description: 'La propiedad por la que se quiere obtener el mayor objeto',
+				acceptedTypes: ['string'],
+				isOptional: false,
+			},
+		],
+		returnType: 'object',
+		examples: ['maxObject([{"a": 1}, {"a": 2}, {"a": 3}], "a") --> {"a": 3}'],
+	},
+	{
 		id: 'now',
 		name: 'Ahora (now)',
 		type: 'function',

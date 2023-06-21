@@ -900,7 +900,7 @@ const functionsInfo: CommandInfo[] = [
 		description: 'Devuelve la fecha actual',
 		argumentType: 'non-variable',
 		arguments: [],
-		returnType: 'date',
+		returnType: 'unknown',
 		examples: ['now() --> 2021-01-01T00:00:00.000Z'],
 	},
 	{

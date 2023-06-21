@@ -323,7 +323,7 @@ const operatorsInfo: CommandInfo[] = [
 		examples: ['null is null --> true', '1 is null --> false'],
 	},
 	{
-		id: 'LessEqualThan',
+		id: 'lessEqualThan',
 		type: 'operator',
 		category: {
 			id: 'comparison-operators',
@@ -351,7 +351,7 @@ const operatorsInfo: CommandInfo[] = [
 		examples: ['1 <= 1 --> true', '1 <= 2 --> true', '2 <= 1 --> false'],
 	},
 	{
-		id: 'LessThan',
+		id: 'lessThan',
 		type: 'operator',
 		category: {
 			id: 'comparison-operators',

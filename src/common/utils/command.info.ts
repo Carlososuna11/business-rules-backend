@@ -323,7 +323,7 @@ const operatorsInfo: CommandInfo[] = [
 		examples: ['null is null --> true', '1 is null --> false'],
 	},
 	{
-		id: 'LessEqualThan',
+		id: 'lessEqualThan',
 		type: 'operator',
 		category: {
 			id: 'comparison-operators',
@@ -351,7 +351,7 @@ const operatorsInfo: CommandInfo[] = [
 		examples: ['1 <= 1 --> true', '1 <= 2 --> true', '2 <= 1 --> false'],
 	},
 	{
-		id: 'LessThan',
+		id: 'lessThan',
 		type: 'operator',
 		category: {
 			id: 'comparison-operators',
@@ -900,7 +900,7 @@ const functionsInfo: CommandInfo[] = [
 		description: 'Devuelve la fecha actual',
 		argumentType: 'non-variable',
 		arguments: [],
-		returnType: 'date',
+		returnType: 'unknown',
 		examples: ['now() --> 2021-01-01T00:00:00.000Z'],
 	},
 	{
@@ -1137,7 +1137,7 @@ const functionsInfo: CommandInfo[] = [
 		examples: ['upper("a") --> "A"', 'upper("AaA") --> "AAA"'],
 	},
 	{
-		id: 'YearsFromNow',
+		id: 'yearsFromNow',
 		name: 'Años desde ahora (YearsFromNow)',
 		type: 'function',
 		category: {
@@ -1151,7 +1151,7 @@ const functionsInfo: CommandInfo[] = [
 			{
 				name: 'fecha',
 				description: 'La fecha a evaluar',
-				acceptedTypes: ['date'],
+				acceptedTypes: ['date', 'string'],
 				isOptional: false,
 			},
 		],
@@ -1160,6 +1160,62 @@ const functionsInfo: CommandInfo[] = [
 			`YearsFromNow("2021-01-01T00:00:00.000Z") --> ${new Date().getFullYear() - 2021}`,
 			`YearsFromNow("2020-01-01T00:00:00.000Z") --> ${new Date().getFullYear() - 2020}`,
 		],
+	},
+	{
+		id: 'getElement',
+		name: 'Obtener Elemento (getElement)',
+		type: 'function',
+		category: {
+			id: 'array-functions',
+			name: 'Funciones de Arreglo',
+			description: 'Se usan para obtener información de un arreglo',
+		},
+		description: 'Obtiene un elemento de un arreglo',
+		argumentType: 'non-variable',
+		arguments: [
+			{
+				name: 'arreglo',
+				description: 'El arreglo a evaluar',
+				acceptedTypes: ['array'],
+				isOptional: false,
+			},
+			{
+				name: 'indice',
+				description: 'El indice del elemento a obtener',
+				acceptedTypes: ['number'],
+				isOptional: false,
+			},
+		],
+		returnType: 'unknown',
+		examples: [`getElement([1,2,3], 0) --> 1`, `getElement(["a","b","c"], 1) --> "b"`],
+	},
+	{
+		id: 'getProperty',
+		name: 'Obtener Propiedad (getProperty)',
+		type: 'function',
+		category: {
+			id: 'object-functions',
+			name: 'Funciones de Objeto',
+			description: 'Se usan para obtener información de un objeto',
+		},
+		description: 'Obtiene una propiedad de un objeto',
+		argumentType: 'non-variable',
+		arguments: [
+			{
+				name: 'objeto',
+				description: 'El objeto a evaluar',
+				acceptedTypes: ['object'],
+				isOptional: false,
+			},
+			{
+				name: 'propiedad',
+				description: 'La propiedad a obtener',
+				acceptedTypes: ['string'],
+				isOptional: false,
+			},
+		],
+		returnType: 'unknown',
+		examples: [`getProperty({a:1,b:2}, "a") --> 1`, `getProperty({a:1,b:2}, "b") --> 2`],
 	},
 ];
 

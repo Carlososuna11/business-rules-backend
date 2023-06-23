@@ -1,0 +1,1553 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>business-rules-backend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">business-rules-backend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content controller">
+                   <div class="content-data">
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Controllers</li>
+  <li class="breadcrumb-item" >ProjectsController</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/project/controllers/project.controller.ts</code>
+        </p>
+
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#findAll" >findAll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#findOne" >findOne</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getContext" >getContext</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getDiagram" >getDiagram</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getEngine" >getEngine</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#remove" >remove</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#setContext" >setContext</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#setEngine" >setEngine</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#update" >update</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#uploadFile" >uploadFile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(body: <a href="../classes/CreateProjectDto.html" target="_self">CreateProjectDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(undefined.createProject)<br />@ApiResponse({status: undefined, description: undefined, type: Project})<br />@HttpCode(HttpStatus.CREATED)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>body</td>
+                                    <td>
+                                                <code><a href="../classes/CreateProjectDto.html" target="_self" >CreateProjectDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../entitys/Project.html" target="_self" >Promise&lt;Project&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findAll"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>findAll</b></span>
+                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findAll(query: PaginateQuery)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(undefined.listProjects)<br />@PaginateQueryOptions()<br />@ApiPaginatedResponse(Project)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>query</td>
+                                    <td>
+                                            <code>PaginateQuery</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../entitys/Project.html" target="_self" >Promise&lt;Paginated&lt;Project&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findOne"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>findOne</b></span>
+                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findOne(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(undefined.getProject)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uuid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../entitys/Project.html" target="_self" >Promise&lt;Project&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getContext"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getContext</b></span>
+                        <a href="#getContext"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getContext(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(undefined.getContext)<br />@ApiResponse({status: undefined, description: undefined, type: Object})<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="279"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:279</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uuid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDiagram"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getDiagram</b></span>
+                        <a href="#getDiagram"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDiagram(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(undefined.getDiagram)<br />@ApiResponse({status: undefined, description: undefined, type: DiagramDto})<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="336"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:336</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uuid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/DiagramDto.html" target="_self" >Promise&lt;DiagramDto&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getEngine"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getEngine</b></span>
+                        <a href="#getEngine"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getEngine(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Get(undefined.getEngine)<br />@ApiResponse({status: undefined, description: undefined, type: EngineDto})<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="209"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:209</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uuid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/EngineDto.html" target="_self" >Promise&lt;EngineDto&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>remove</b></span>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>remove(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Delete(undefined.deleteProject)<br />@ApiResponse({status: undefined, description: undefined})<br />@HttpCode(HttpStatus.NO_CONTENT)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uuid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setContext"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>setContext</b></span>
+                        <a href="#setContext"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setContext(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, body: <a href="../classes/ContextDto.html" target="_self">ContextDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(undefined.setContext)<br />@ApiResponse({status: undefined, description: undefined, type: Object})<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="303"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:303</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uuid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>body</td>
+                                    <td>
+                                                <code><a href="../classes/ContextDto.html" target="_self" >ContextDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;object&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setEngine"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>setEngine</b></span>
+                        <a href="#setEngine"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setEngine(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, engineDto: <a href="../classes/EngineDto.html" target="_self">EngineDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(undefined.setEngine)<br />@ApiResponse({status: undefined, description: undefined, type: EngineDto})<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="243"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:243</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uuid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>engineDto</td>
+                                    <td>
+                                                <code><a href="../classes/EngineDto.html" target="_self" >EngineDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/EngineDto.html" target="_self" >Promise&lt;EngineDto&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, updateProjectDto: <a href="../classes/UpdateProjectDto.html" target="_self">UpdateProjectDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Patch(undefined.updateProject)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>uuid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>updateProjectDto</td>
+                                    <td>
+                                                <code><a href="../classes/UpdateProjectDto.html" target="_self" >UpdateProjectDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../entitys/Project.html" target="_self" >Promise&lt;Project&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadFile"></a>
+                    <span class="name">
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier"></span>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>uploadFile</b></span>
+                        <a href="#uploadFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>uploadFile(file: Express.Multer.File)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(undefined.uploadProject)<br />@ApiConsumes(&#x27;multipart/form-data&#x27;)<br />@ApiResponse({status: undefined, description: undefined, type: Project})<br />@ApiBody({description: &#x27;TSBR File&#x27;, schema: undefined})<br />@UseInterceptors(undefined)<br />@HttpCode(HttpStatus.CREATED)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/project/controllers/project.controller.ts:160</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>file</td>
+                                    <td>
+                                            <code>Express.Multer.File</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../entitys/Project.html" target="_self" >Promise&lt;Project&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+	Controller,
+	Get,
+	Post,
+	Body,
+	Patch,
+	Param,
+	Delete,
+	NotFoundException,
+	BadRequestException,
+	HttpStatus,
+	ParseUUIDPipe,
+	UseInterceptors,
+	UploadedFile,
+	ParseFilePipe,
+	MaxFileSizeValidator,
+	Logger,
+	ClassSerializerInterceptor,
+	UnsupportedMediaTypeException,
+	HttpCode,
+} from &#x27;@nestjs/common&#x27;;
+import { MESSAGES, PaginateQueryOptions, ApiPaginatedResponse, exportContext, importContext } from &#x27;@common/utils&#x27;;
+import { ProjectsService } from &#x27;../services/project.service&#x27;;
+import { CreateProjectDto, EngineDto, UpdateProjectDto, UploadProjectDto, ContextDto, DiagramDto } from &#x27;../dto&#x27;;
+import { Project } from &#x27;@entities/project&#x27;;
+import { URLS } from &#x27;@common/constants&#x27;;
+import { Paginate, PaginateQuery, Paginated } from &#x27;nestjs-paginate&#x27;;
+import { FileInterceptor } from &#x27;@nestjs/platform-express&#x27;;
+import { Engine, getUrlDiagram } from &#x27;typescript-business-rules-engine&#x27;;
+import { ApiBody, ApiConsumes, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { diskStorage } from &#x27;multer&#x27;;
+import { v4 as uuidv4 } from &#x27;uuid&#x27;;
+import { unlink } from &#x27;fs&#x27;;
+import Ajv from &#x27;ajv&#x27;;
+import type { JSONSchema7 } from &#x27;json-schema&#x27;;
+
+@Controller(URLS.PROJECTS.base)
+@ApiTags(&#x27;Projects&#x27;)
+@UseInterceptors(ClassSerializerInterceptor)
+export class ProjectsController {
+	constructor(private readonly projectsService: ProjectsService) {}
+
+	@Post(URLS.PROJECTS.createProject)
+	@ApiResponse({
+		status: HttpStatus.CREATED,
+		description: MESSAGES.CREATED,
+		type: Project,
+	})
+	@HttpCode(HttpStatus.CREATED)
+	public async create(@Body() body: CreateProjectDto): Promise&lt;Project&gt; {
+		const project &#x3D; await this.projectsService.create(body);
+		return project;
+	}
+
+	@Get(URLS.PROJECTS.listProjects)
+	@PaginateQueryOptions()
+	@ApiPaginatedResponse(Project)
+	public async findAll(@Paginate() query: PaginateQuery): Promise&lt;Paginated&lt;Project&gt;&gt; {
+		return await this.projectsService.findAll(query);
+	}
+
+	@Get(URLS.PROJECTS.getProject)
+	public async findOne(@Param(&#x27;uuid&#x27;, ParseUUIDPipe) uuid: string): Promise&lt;Project&gt; {
+		const project &#x3D; await this.projectsService.findOne(uuid);
+		if (!project) {
+			throw new NotFoundException(&#x27;Project not found&#x27;);
+		}
+		return project;
+	}
+
+	@Patch(URLS.PROJECTS.updateProject)
+	public async update(
+		@Param(&#x27;uuid&#x27;, ParseUUIDPipe) uuid: string,
+		@Body() updateProjectDto: UpdateProjectDto
+	): Promise&lt;Project&gt; {
+		const project &#x3D; await this.projectsService.update(uuid, updateProjectDto);
+		if (!project) {
+			throw new NotFoundException(&#x27;Project not found&#x27;);
+		}
+		if (project.engineFile) {
+			// rename the name and description of the engine file
+			const engine &#x3D; await Engine.import(&#x60;${__dirname}/../../../public/projects/${project.engineFile}&#x60;);
+			engine.name &#x3D; project.name;
+			engine.description &#x3D; project.description;
+			await engine.export(&#x60;${__dirname}/../../../public/projects/&#x60;, project.uuid);
+		}
+		return project;
+	}
+
+	@Delete(URLS.PROJECTS.deleteProject)
+	@ApiResponse({
+		status: HttpStatus.NO_CONTENT,
+		description: MESSAGES.NO_CONTENT,
+	})
+	@HttpCode(HttpStatus.NO_CONTENT)
+	public async remove(@Param(&#x27;uuid&#x27;, ParseUUIDPipe) uuid: string): Promise&lt;void&gt; {
+		const project &#x3D; await this.projectsService.findOne(uuid);
+		if (!project) {
+			return;
+		}
+		if (project.engineFile) {
+			// delete the engine file
+			unlink(&#x60;${__dirname}/../../../public/projects/${project.engineFile}&#x60;, (err) &#x3D;&gt; {
+				if (err) {
+					Logger.error(err, &#x27;ProjectsController.remove&#x27;);
+				}
+			});
+		}
+		if (project.contextFile) {
+			// delete the context file
+			unlink(&#x60;${__dirname}/../../../public/projects/${project.contextFile}&#x60;, (err) &#x3D;&gt; {
+				if (err) {
+					Logger.error(err, &#x27;ProjectsController.remove&#x27;);
+				}
+			});
+		}
+		await this.projectsService.remove(uuid);
+	}
+
+	@Post(URLS.PROJECTS.uploadProject)
+	@ApiConsumes(&#x27;multipart/form-data&#x27;)
+	@ApiResponse({
+		status: HttpStatus.CREATED,
+		description: MESSAGES.CREATED,
+		type: Project,
+	})
+	@ApiBody({
+		description: &#x27;TSBR File&#x27;,
+		schema: {
+			type: &#x27;object&#x27;,
+			properties: {
+				file: {
+					type: &#x27;string&#x27;,
+					format: &#x27;binary&#x27;,
+				},
+			},
+		},
+	})
+	@UseInterceptors(
+		FileInterceptor(&#x27;file&#x27;, {
+			storage: diskStorage({
+				destination: &#x60;${__dirname}/../../../public/projects/&#x60;,
+				filename: (req, file, cb) &#x3D;&gt; {
+					const fileNameSplit &#x3D; file.originalname.split(&#x27;.&#x27;);
+					const fileExtension &#x3D; fileNameSplit[fileNameSplit.length - 1];
+					cb(null, &#x60;${uuidv4()}.${fileExtension}&#x60;);
+				},
+			}),
+			fileFilter: (req, file, cb) &#x3D;&gt; {
+				const fileNameSplit &#x3D; file.originalname.split(&#x27;.&#x27;);
+				const fileExtension &#x3D; fileNameSplit[fileNameSplit.length - 1];
+				if (fileExtension !&#x3D;&#x3D; &#x27;tsbr&#x27;) {
+					cb(new UnsupportedMediaTypeException(&#x27;File extension is not valid. Only .tsbr files are allowed&#x27;), false);
+				}
+				cb(null, true);
+			},
+		})
+	)
+	@HttpCode(HttpStatus.CREATED)
+	public async uploadFile(
+		@UploadedFile(
+			new ParseFilePipe({
+				validators: [new MaxFileSizeValidator({ maxSize: 1024 * 1024 * 10 })],
+			})
+		)
+		file: Express.Multer.File
+	): Promise&lt;Project&gt; {
+		let engine: Engine;
+		try {
+			engine &#x3D; await Engine.import(file.path);
+		} catch (e) {
+			Logger.error(e, &#x27;ProjectsController.uploadFile&#x27;);
+			// Delete the file
+			unlink(file.path, (err) &#x3D;&gt; {
+				if (err) {
+					Logger.error(err, &#x27;ProjectsController.uploadFile&#x27;);
+				}
+			});
+			throw new BadRequestException(&#x27;Error Loading File: Invalid TypeScript Business Rules file&#x27;);
+		}
+		const fileName &#x3D; file.filename.split(&#x27;.&#x27;)[0];
+
+		const ajv &#x3D; new Ajv();
+		if (engine.dataSchema) {
+			if (!ajv.validateSchema(engine.dataSchema)) {
+				throw new BadRequestException(&#x27;Invalid Context Schema&#x27;);
+			}
+
+			await exportContext(engine.dataSchema, &#x60;${__dirname}/../../../public/contexts&#x60;, fileName);
+		}
+
+		const uploadData: UploadProjectDto &#x3D; {
+			uuid: fileName,
+			name: engine.name || &#x27;Untitled Project&#x27;,
+			description: engine.description || &#x27;&#x27;,
+			engineFile: file.filename,
+			contextFile: engine.dataSchema ? &#x60;${fileName}.json&#x60; : undefined,
+		};
+		const project &#x3D; await this.projectsService.upload(uploadData);
+		return project;
+	}
+
+	@Get(URLS.PROJECTS.getEngine)
+	@ApiResponse({
+		status: HttpStatus.OK,
+		description: MESSAGES.OK,
+		type: EngineDto,
+	})
+	public async getEngine(@Param(&#x27;uuid&#x27;, ParseUUIDPipe) uuid: string): Promise&lt;EngineDto&gt; {
+		const project &#x3D; await this.projectsService.findOne(uuid);
+		if (!project) {
+			throw new NotFoundException(&#x27;Project not found&#x27;);
+		}
+
+		if (!project.engineFile) {
+			const engineObject: EngineDto &#x3D; {
+				name: project.name,
+				description: project.description,
+				rules: [],
+			};
+			return engineObject;
+		}
+		try {
+			const engine &#x3D; await Engine.import(&#x60;${__dirname}/../../../public/projects/${project.engineFile}&#x60;);
+			return engine.toObject();
+		} catch (e) {
+			Logger.error(e, &#x27;ProjectsController.getEngine&#x27;);
+			const engineObject: EngineDto &#x3D; {
+				name: project.name,
+				description: project.description,
+				rules: [],
+			};
+			return engineObject;
+		}
+	}
+
+	@Post(URLS.PROJECTS.setEngine)
+	@ApiResponse({
+		status: HttpStatus.OK,
+		description: MESSAGES.OK,
+		type: EngineDto,
+	})
+	public async setEngine(@Param(&#x27;uuid&#x27;, ParseUUIDPipe) uuid: string, @Body() engineDto: EngineDto): Promise&lt;EngineDto&gt; {
+		const project &#x3D; await this.projectsService.findOne(uuid);
+		if (!project) {
+			throw new NotFoundException(&#x27;Project not found&#x27;);
+		}
+		let engine: Engine;
+		try {
+			let dataSchema: JSONSchema7 | undefined;
+			if (project.contextFile) {
+				const context &#x3D; await importContext(&#x60;${__dirname}/../../../public/contexts&#x60;, project.uuid);
+				dataSchema &#x3D; JSON.parse(context);
+			}
+
+			engine &#x3D; new Engine(
+				engineDto.name || project.name,
+				engineDto.rules,
+				engineDto.description || project.description,
+				undefined,
+				dataSchema
+			);
+		} catch (e) {
+			Logger.error(e, &#x27;ProjectsController.setEngine&#x27;);
+			throw new BadRequestException(&#x60;Error Configuring Rules: ${e}&#x60;);
+		}
+		await engine.export(&#x60;${__dirname}/../../../public/projects/&#x60;, project.uuid);
+		project.engineFile &#x3D; &#x60;${project.uuid}.tsbr&#x60;;
+		await this.projectsService.update(uuid, project);
+		return engine.toObject();
+	}
+
+	@Get(URLS.PROJECTS.getContext)
+	@ApiResponse({
+		status: HttpStatus.OK,
+		description: MESSAGES.OK,
+		type: Object,
+	})
+	public async getContext(@Param(&#x27;uuid&#x27;, ParseUUIDPipe) uuid: string): Promise&lt;object&gt; {
+		const project &#x3D; await this.projectsService.findOne(uuid);
+		if (!project) {
+			throw new NotFoundException(&#x27;Project not found&#x27;);
+		}
+
+		if (!project.contextFile) {
+			return {};
+		}
+		try {
+			const context &#x3D; await importContext(&#x60;${__dirname}/../../../public/contexts&#x60;, project.uuid);
+			return JSON.parse(context);
+		} catch (e) {
+			Logger.error(e, &#x27;ProjectsController.getContext&#x27;);
+			return {};
+		}
+	}
+
+	@Post(URLS.PROJECTS.setContext)
+	@ApiResponse({
+		status: HttpStatus.OK,
+		description: MESSAGES.OK,
+		type: Object,
+	})
+	public async setContext(@Param(&#x27;uuid&#x27;, ParseUUIDPipe) uuid: string, @Body() body: ContextDto): Promise&lt;object&gt; {
+		const project &#x3D; await this.projectsService.findOne(uuid);
+		if (!project) {
+			throw new NotFoundException(&#x27;Project not found&#x27;);
+		}
+
+		const ajv &#x3D; new Ajv();
+		// check if context is a valid json schema
+		if (!ajv.validateSchema(body.context)) {
+			throw new BadRequestException(&#x27;Invalid Context Schema&#x27;);
+		}
+
+		if (project.engineFile) {
+			// update the engine file with the new context
+			const engine &#x3D; await Engine.import(&#x60;${__dirname}/../../../public/projects/${project.engineFile}&#x60;);
+			engine.dataSchema &#x3D; body.context;
+			await engine.export(&#x60;${__dirname}/../../../public/projects/&#x60;, project.uuid);
+		}
+
+		await exportContext(body.context, &#x60;${__dirname}/../../../public/contexts&#x60;, project.uuid);
+
+		project.contextFile &#x3D; &#x60;${project.uuid}.json&#x60;;
+		await this.projectsService.update(uuid, project);
+
+		return body.context;
+	}
+
+	@Get(URLS.PROJECTS.getDiagram)
+	@ApiResponse({
+		status: HttpStatus.OK,
+		description: MESSAGES.OK,
+		type: DiagramDto,
+	})
+	public async getDiagram(@Param(&#x27;uuid&#x27;, ParseUUIDPipe) uuid: string): Promise&lt;DiagramDto&gt; {
+		const project &#x3D; await this.projectsService.findOne(uuid);
+		if (!project) {
+			throw new NotFoundException(&#x27;Project not found&#x27;);
+		}
+
+		if (!project.engineFile) {
+			throw new BadRequestException(&#x27;Project does not have an engine file&#x27;);
+		}
+
+		try {
+			const engine &#x3D; await Engine.import(&#x60;${__dirname}/../../../public/projects/${project.engineFile}&#x60;);
+			const diagram &#x3D; getUrlDiagram(engine.toDiagram());
+			return { diagram };
+		} catch (e) {
+			Logger.error(e, &#x27;ProjectsController.getDiagram&#x27;);
+			throw new BadRequestException(&#x60;Error Generating Diagram: ${e}&#x60;);
+		}
+	}
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProjectsController.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -9,7 +9,11 @@ import {
 } from '@nestjs/terminus';
 
 /**
- * https://docs.nestjs.com/recipes/terminus
+ * A controller class for handling health check requests
+ * @constructor
+ * @param {HealthCheckService} health - An instance of the HealthCheckService class
+ * @param {HttpHealthIndicator} http - An instance of the HttpHealthIndicator class
+ * @param {TypeOrmHealthIndicator} db - An instance of the TypeOrmHealthIndicator class
  */
 @Controller()
 export class HealthController {
@@ -19,6 +23,12 @@ export class HealthController {
 		private db: TypeOrmHealthIndicator
 	) {}
 
+	/**
+	 * A GET endpoint for checking the health of the application
+	 * @async
+	 * @function check
+	 * @returns {Promise<HealthCheckResult>} - A promise that resolves to an object indicating the health status of the application
+	 */
 	@Get('health')
 	@HealthCheck()
 	public async check(): Promise<HealthCheckResult> {

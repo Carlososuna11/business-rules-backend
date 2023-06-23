@@ -1,3 +1,6 @@
+/**
+ * This controller is responsible for handling requests related to contexts.
+ */
 import { Controller, Get, HttpStatus, Query, Req } from '@nestjs/common';
 import { MESSAGES, PaginatedResult } from '@common/utils';
 import { ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
@@ -9,6 +12,14 @@ import { PaginatedResultDto } from '../dto/context.dto';
 @Controller(URLS.CONTEXT.base)
 @ApiTags('Context')
 export class ContextController {
+	/**
+	 * Returns a paginated result of static contexts.
+	 *
+	 * @param req The Express request object.
+	 * @param page The page number for pagination (optional, default is 1).
+	 * @param limit The limit of items per page for pagination (optional, default is 10).
+	 * @returns A PaginatedResult object containing the contexts for the specified page and limit.
+	 */
 	@Get(URLS.CONTEXT.getStaticContexts)
 	@ApiQuery({ name: 'page', required: false, type: Number })
 	@ApiQuery({ name: 'limit', required: false, type: Number })
